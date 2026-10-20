@@ -1,0 +1,26 @@
+MHA Bridge — third-party notices
+
+The visual layer of the dashboard cards (styles, the car drawing layout and the
+icon set) is derived from Geely Connect, https://github.com/YossiKon/geely-connect
+Copyright (c) 2026 Yossi Koncha, released under the MIT License. The licence text
+is kept in custom_components/mha_bridge/LICENSE-geely-connect and must stay with
+any copy of this software that includes the card.
+
+The side car picture (car-side.svg) was vectorised from the author's own photographs
+of a Geely Monjaro; its paint, chrome and wheel-arch zones come from hand-made masks.
+The flat top view (car-top.webp, car-top-mask.webp) is a render of the 3D model.
+
+The 3D top view uses three.js (https://threejs.org), Copyright (c) 2010-2023 three.js
+authors, MIT License (custom_components/mha_bridge/LICENSE-threejs). The 3D car model
+(car3d.bin) was made by the project author.
+
+The fabric / trim masks of the cabin and cockpit pictures were made for this project.
+
+The map background in the preview screenshots (docs/gallery) is a fragment of OpenStreetMap, (c) OpenStreetMap contributors, ODbL (https://www.openstreetmap.org/copyright).
+It is only a backdrop for the screenshots; the card itself draws the map through Home Assistant.
+
+The climate button icons are Material Design Icons by the Pictogrammers community
+(https://pictogrammers.com/library/mdi/), Apache License 2.0.
+
+MHA Bridge is an independent community project. It is not affiliated with,
+endorsed by or supported by Geely, ECARX or Home Assistant.

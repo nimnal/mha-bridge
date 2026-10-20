@@ -1,0 +1,21 @@
+{
+  "domain": "mha_bridge",
+  "name": "MHA Bridge",
+  "after_dependencies": [
+    "frontend",
+    "lovelace"
+  ],
+  "codeowners": [
+    "@nimnal"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "websocket_api"
+  ],
+  "documentation": "https://github.com/nimnal/mha-bridge",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/nimnal/mha-bridge/issues",
+  "single_config_entry": true,
+  "version": "1.1.1"
+}

@@ -1,0 +1,377 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "MHA Bridge",
+        "description": "Add the car. Then install the Android bridge app on the head unit and sign in with a long-lived access token.",
+        "data": {
+          "name": "Name"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Already configured."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "speed": {
+        "name": "Speed"
+      },
+      "speed_ipk": {
+        "name": "Speed (instrument cluster)"
+      },
+      "fuel_level": {
+        "name": "Fuel level"
+      },
+      "odometer": {
+        "name": "Odometer"
+      },
+      "range": {
+        "name": "Range"
+      },
+      "temp_outside": {
+        "name": "Outside temperature"
+      },
+      "temp_inside": {
+        "name": "Cabin temperature"
+      },
+      "rpm": {
+        "name": "Engine speed"
+      },
+      "tire_fl": {
+        "name": "Tire front left"
+      },
+      "tire_fr": {
+        "name": "Tire front right"
+      },
+      "tire_rl": {
+        "name": "Tire rear left"
+      },
+      "tire_rr": {
+        "name": "Tire rear right"
+      },
+      "ignition": {
+        "name": "Ignition",
+        "state": {
+          "lock": "Locked",
+          "off": "Off",
+          "acc": "Accessory",
+          "on": "On",
+          "start": "Starting",
+          "driving": "Driving"
+        }
+      },
+      "gear": {
+        "name": "Gear",
+        "state": {
+          "p": "P",
+          "r": "R",
+          "n": "N",
+          "d": "D"
+        }
+      },
+      "belt_driver": {
+        "name": "Driver seat belt",
+        "state": {
+          "buckled": "Buckled",
+          "unbuckled": "Unbuckled"
+        }
+      },
+      "belt_passenger": {
+        "name": "Passenger seat belt",
+        "state": {
+          "buckled": "Buckled",
+          "unbuckled": "Unbuckled"
+        }
+      }
+    },
+    "binary_sensor": {
+      "connected": {
+        "name": "Car connection"
+      },
+      "engine_running": {
+        "name": "Engine running"
+      },
+      "door_fl": {
+        "name": "Driver door"
+      },
+      "door_fr": {
+        "name": "Front passenger door"
+      },
+      "door_rl": {
+        "name": "Rear left door"
+      },
+      "door_rr": {
+        "name": "Rear right door"
+      },
+      "hood": {
+        "name": "Hood"
+      },
+      "trunk": {
+        "name": "Trunk"
+      },
+      "central_lock": {
+        "name": "Central lock"
+      }
+    },
+    "number": {
+      "temp_driver": {
+        "name": "Driver temperature"
+      },
+      "temp_passenger": {
+        "name": "Passenger temperature"
+      },
+      "ambient_brightness": {
+        "name": "Ambient brightness"
+      },
+      "rear_temperature": {
+        "name": "Rear temperature"
+      }
+    },
+    "select": {
+      "fan_speed": {
+        "name": "Fan speed",
+        "state": {
+          "off": "Off",
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "7": "7",
+          "8": "8",
+          "9": "9"
+        }
+      },
+      "blowing_mode": {
+        "name": "Airflow",
+        "state": {
+          "face": "Face",
+          "leg": "Feet",
+          "face_leg": "Face + feet",
+          "window": "Windshield",
+          "face_window": "Face + windshield",
+          "leg_window": "Feet + windshield",
+          "all": "All",
+          "auto": "Auto",
+          "off": "Off"
+        }
+      },
+      "circulation": {
+        "name": "Air source",
+        "state": {
+          "outside": "Outside air",
+          "inside": "Recirculation"
+        }
+      },
+      "seat_heat_driver": {
+        "name": "Driver seat heating",
+        "state": {
+          "off": "Off",
+          "1": "1",
+          "2": "2",
+          "3": "3"
+        }
+      },
+      "seat_heat_passenger": {
+        "name": "Passenger seat heating",
+        "state": {
+          "off": "Off",
+          "1": "1",
+          "2": "2",
+          "3": "3"
+        }
+      },
+      "seat_vent_driver": {
+        "name": "Driver seat ventilation",
+        "state": {
+          "off": "Off",
+          "1": "1",
+          "2": "2",
+          "3": "3"
+        }
+      },
+      "seat_vent_passenger": {
+        "name": "Passenger seat ventilation",
+        "state": {
+          "off": "Off",
+          "1": "1",
+          "2": "2",
+          "3": "3"
+        }
+      },
+      "steering_heat": {
+        "name": "Steering wheel heating",
+        "state": {
+          "off": "Off",
+          "1": "1",
+          "2": "2",
+          "3": "3"
+        }
+      },
+      "massage_level_driver": {
+        "name": "Driver massage intensity",
+        "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3"
+        }
+      },
+      "massage_level_passenger": {
+        "name": "Passenger massage intensity",
+        "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3"
+        }
+      },
+      "massage_program_driver": {
+        "name": "Driver massage program",
+        "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "7": "7",
+          "8": "8"
+        }
+      },
+      "massage_program_passenger": {
+        "name": "Passenger massage program",
+        "state": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "7": "7",
+          "8": "8"
+        }
+      },
+      "ambient_mode": {
+        "name": "Ambient mode",
+        "state": {
+          "drive": "Drive",
+          "custom": "Custom colour",
+          "music": "Music",
+          "weather": "Weather"
+        }
+      },
+      "ambient_effect": {
+        "name": "Ambient effect",
+        "state": {
+          "static": "Static",
+          "gradient": "Gradient",
+          "breathe": "Breathe"
+        }
+      },
+      "ambient_color": {
+        "name": "Ambient colour",
+        "state": {
+          "red": "Red",
+          "orange": "Orange",
+          "amber": "Amber",
+          "honey": "Honey",
+          "yellow": "Yellow",
+          "lime": "Lime",
+          "green": "Green",
+          "mint": "Mint",
+          "turquoise": "Turquoise",
+          "sky": "Sky",
+          "blue": "Blue",
+          "purple": "Purple",
+          "pink": "Pink"
+        }
+      },
+      "seat_heat_rear_left": {
+        "name": "Rear left seat heating",
+        "state": {
+          "off": "Off",
+          "1": "1",
+          "2": "2",
+          "3": "3"
+        }
+      },
+      "seat_heat_rear_right": {
+        "name": "Rear right seat heating",
+        "state": {
+          "off": "Off",
+          "1": "1",
+          "2": "2",
+          "3": "3"
+        }
+      },
+      "rear_blowing_mode": {
+        "name": "Rear airflow",
+        "state": {
+          "face": "Face",
+          "leg": "Feet",
+          "face_leg": "Face + feet"
+        }
+      }
+    },
+    "switch": {
+      "ac": {
+        "name": "A/C"
+      },
+      "climate_auto": {
+        "name": "Climate AUTO"
+      },
+      "defrost_front": {
+        "name": "Windshield defrost"
+      },
+      "defrost_rear": {
+        "name": "Rear window defrost"
+      },
+      "sunroof_tilt": {
+        "name": "Sunroof tilt"
+      },
+      "rear_power": {
+        "name": "Rear climate"
+      },
+      "rear_auto": {
+        "name": "Rear climate AUTO"
+      },
+      "climate_lock": {
+        "name": "Rear climate panel lock"
+      },
+      "g_clean": {
+        "name": "Air cleaning (G-clean)"
+      },
+      "massage_driver": {
+        "name": "Driver massage"
+      },
+      "massage_passenger": {
+        "name": "Passenger massage"
+      },
+      "ambient_power": {
+        "name": "Ambient light"
+      }
+    },
+    "cover": {
+      "win_fl": {
+        "name": "Driver window"
+      },
+      "win_fr": {
+        "name": "Front passenger window"
+      },
+      "win_rl": {
+        "name": "Rear left window"
+      },
+      "win_rr": {
+        "name": "Rear right window"
+      },
+      "sunroof": {
+        "name": "Sunroof"
+      },
+      "sunshade": {
+        "name": "Panoramic sunshade"
+      }
+    }
+  }
+}

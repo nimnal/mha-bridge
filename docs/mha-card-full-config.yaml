@@ -1,0 +1,265 @@
+# MHA Bridge 1.1 — полная конфигурация карточки, все ключи необязательны
+# То же можно задать без YAML: «Изменить» у карточки открывает визуальный редактор.
+type: custom:mha-card            # или mha-card-full / mha-card-compact / mha-card-mini / mha-card-panel
+view: side                       # mha-card, mha-card-full, mha-card-panel: side — машина сбоку, top — сверху (3D)
+
+# --- общее -------------------------------------------------------------
+name: Geely Monjaro              # заголовок (по умолчанию имя устройства)
+hide_name: false                 # true — скрыть заголовок
+# prefix: geely_monjaro          # НЕ задавайте без нужды: по умолчанию сущности ищутся автоматически
+tracker: device_tracker.geely_monjaro
+show_parked: false               # true — метка «Стоянка», когда машина стоит
+demo: false                      # true — без машины: встроенная модель, все кнопки работают, ничего не отправляется
+map: false                       # true — карта внутри карточки; или подробно:
+# map:
+#   entity: device_tracker.geely_monjaro   # по умолчанию ключ tracker
+#   zoom: 15                     # масштаб по умолчанию
+#   aspect_ratio: "16:10"        # или height: 260 (px)
+#   theme_mode: auto             # auto | light | dark
+#   hours_to_show: 0             # след пути, часов
+#   tab: overview                # на какой вкладке
+#   title: Где машина               # заголовок над картой; "" — без заголовка
+#   center: auto                    # auto (как в HA) | follow (держать машину в центре) | fixed (не двигать при обновлениях)
+#   locate_button: false            # true — кнопка «К машине» поверх карты
+#   marker: car                     # car (Monjaro сверху цвета машины, по умолчанию) | default (штатный маркер HA) | адрес картинки: /local/marker.png
+#   marker_size: 56                 # высота маркера, px (16–160)
+#   marker_rotate: true             # поворачивать маркер по курсу (атрибут heading, course или bearing у трекера)
+#   marker_heading: course          # имя атрибута курса, если оно другое
+#   caption: [speed, state]         # подпись под своим маркером: speed, state, address, name
+#   address_entity: sensor.car_address   # откуда брать адрес (иначе атрибут address у трекера)
+#   label: icon                     # подпись штатного маркера: icon | name | state | attribute
+#   label_attribute: speed          # какой атрибут показывать при label: attribute
+#   label_unit: km/h
+#   entities:                       # ещё объекты на карте: зоны, вторая машина, люди
+#     - zone.home
+#     - entity: device_tracker.wife
+#       label_mode: name            # name | state | attribute | icon
+#       focus: false                # не учитывать при подборе масштаба
+#   geo_location_sources: []        # источники geo_location, например [all]
+#   auto_fit: false                 # подобрать масштаб так, чтобы вошли все объекты
+#   fit_zones: false                # учитывать зоны при подборе
+#   trail_color: "#ff3b7a"          # цвет следа пути (любой цвет CSS)
+#   trail_width: 4                  # толщина линии следа
+stable_tabs: true                # false — высота картинки своя на каждой вкладке
+headlights: true                 # свет фар, пока двигатель работает
+accent: green                    # основной цвет: green (по умолчанию), mint, blue, sky, cyan, violet, purple, pink, red, orange, amber, yellow, lime, white или любой CSS-цвет "#ff8a3d"
+# warn_color: "#e8a13a"          # необязательно: цвет предупреждений
+# critical_color: "#e5484d"      # необязательно: цвет критичных значений
+# text_size: 1.15                # размер текста целиком: множитель (до 4) или px; либо по типам элементов:
+# text_size:
+#   all: 1.1                     # всё, у чего нет своего ключа
+#   title: 1.3                   # название
+#   status: 1.15                 # строка статуса
+#   big: 1.35                    # большая цифра запаса хода
+#   side: 1.2                    # цифры справа от неё
+#   unit: 1.2                    # единицы (km, °C)
+#   heading: 12px                # заголовки блоков
+#   button: 1.2                  # подписи кнопок и плиток
+#   chip: 1.15                   # чипы
+#   tab: 1.3                     # вкладки
+#   row: 1.1                     # строки данных
+#   stepper: 1.2                 # значения между − и +
+#   window: 1.1                  # плитки окон, люка, шторки
+#   tire: 1.2                    # давление в шинах
+#   caption: 1.1                 # подписи на фото салона
+#   label3d: 1.2                 # подписи на виде сверху (только множитель)
+# zoom: 0.9                      # размер всей карточки целиком, 0.5–2
+debug: false                     # true — под карточкой покажет, какие сущности найдены и их состояние
+more_info: true                  # false — значения не кликабельны (по умолчанию клик открывает историю HA)
+tap_action: none                 # тап по карточке: expand (окно с полной карточкой) | none | navigate | url | more-info | perform-action
+car_tap_action: expand           # тап по машине, те же значения (expand по умолчанию у compact)
+popup_card: mha-card-full        # окно по expand: mha-card-full | mha-card | mha-card-compact | mha-card-mini
+# popup_map: true                # true — в окне всегда карта, false — без карты (без ключа — как в карточке)
+# car_tap_action:                # пример: перейти на страницу с панелью
+#   action: navigate
+#   navigation_path: /lovelace/car-panel
+wheel_spin: false                # true — диски на виде сбоку крутятся по скорости машины (колесо 20")
+# wheel_circumference: 2.29      # окружность колеса, м
+# wheel_spin_entity: sensor.my_speed   # необязательно: свой датчик скорости
+top_labels:                      # подписи на виде сверху (всё включено по умолчанию); false — убрать все, либо список [doors, windows]
+  doors: true                    # Открыта / Закрыта у каждой двери
+  windows: true                  # состояние окна под подписью двери
+  roof: true                     # люк и шторка
+  trunk: true                    # багажник
+  tires: true                    # давление в шинах у колёс
+  hood: true                     # капот
+car_3d: true                     # false — отключить 3D-вид сверху (останется плоская картинка)
+
+# --- Пресеты: плитки одной кнопки под фото (до 8 штук) --------------------------------------
+# В коде карточки встроенных пресетов НЕТ: что перечислено в presets, то и показано; нет ключа presets — нет и плиток.
+# Ниже шесть привычных (то же, что examples/presets.yaml) и два своих. Шаги, которых нет в машине, пропускаются;
+# что не указано — не меняется. Окна и люк: closed | open | 0..100 (по одному: window_driver / _passenger / _rear_left / _rear_right),
+# sunroof ещё и vent; seat_heat / seat_vent / wheel: off, "1", "2", "3"; fan: "1".."9" в кавычках;
+# flow: face, leg, face_leg, window, face_window, leg_window, all, auto; circ: inside, outside, auto;
+# icon: mdi:название или встроенная (heat, cool, defrost, auto, fresh ...).
+presets:
+  - id: winter
+    name: Зима                 # optional: the label on the tile
+    icon: heat
+    temp: 24
+    auto: true
+    ac: false
+    defrost: true
+    rear: true
+    circ: outside
+    seat_heat: "3"
+    wheel: "3"
+    seat_vent: "off"
+  - id: summer
+    name: Лето
+    icon: cool
+    temp: min
+    auto: true
+    ac: true
+    defrost: false
+    rear: false
+    circ: inside
+    flow: face
+    seat_vent: "3"
+    seat_heat: "off"
+    wheel: "off"
+  - id: defog
+    name: Запотело
+    icon: defrost
+    temp: 24
+    auto: false
+    ac: true
+    defrost: true
+    rear: true
+    circ: outside
+    flow: window
+    fan: "7"
+  - id: comfort
+    name: Комфорт
+    icon: auto
+    temp: 22
+    auto: true
+    ac: true
+    defrost: false
+    rear: false
+    circ: auto
+    seat_heat: "off"
+    seat_vent: "off"
+    wheel: "off"
+  - id: vent
+    name: Проветрить
+    icon: fresh
+    auto: false
+    ac: false
+    defrost: false
+    rear: false
+    circ: outside
+    flow: face
+    fan: "5"
+  - id: "off"
+    name: Всё выкл
+    enabled: false              # скрыт по умолчанию (включите true, чтобы показать); всего на карточке до 8 пресетов
+    icon: climate
+    auto: false
+    ac: false
+    defrost: false
+    rear: false
+    seat_heat: "off"
+    seat_vent: "off"
+    wheel: "off"
+  - id: parking                 # свой пресет
+    name: Парковка
+    icon: mdi:car-brake-parking
+    windows: closed
+    sunroof: closed
+    sunshade: closed
+    ac: false
+    auto: false
+  - id: leave
+    name: Ухожу
+    enabled: false              # скрыт по умолчанию
+    icon: mdi:exit-run
+    windows: closed
+    ac: false
+    actions:                     # любые сервисы Home Assistant, как в автоматизациях
+      - action: light.turn_off
+        target: { entity_id: light.garage }
+rhd: false                       # true — правый руль: на виде сверху меняет стороны и зеркалит картинку
+
+# --- топливо -----------------------------------------------------------
+tank_size: 60                    # литров в баке (для расчёта процента полосы)
+fuel_warn: 25                    # % — жёлтая ступень и метка «Мало топлива»
+fuel_critical: 10                # % — красная ступень и метка «Топливо на исходе»
+fuel_color_ok: "#2fd6a4"         # цвета ступеней (любой CSS-цвет)
+fuel_color_warn: "#e8a13a"
+fuel_color_critical: "#e5484d"
+
+# --- шины --------------------------------------------------------------
+tire_critical: 1.8               # давление ниже этого значения (в единицах датчика, обычно bar) — красным; везде
+tire_color_critical: "#e5484d"   # цвет «критического» давления
+
+# --- маршрут -----------------------------------------------------------
+nav:                             # кнопки навигации — порядок как в списке; лишние убрать
+  - yandex                       # Яндекс Карты
+  - maps                         # Google Карты
+  - osm                          # OpenStreetMap
+  - apple                        # Apple Карты
+  - here                         # HERE WeGo
+nav_mode: route                  # route — проложить маршрут к машине, locate — показать, где машина
+nav_travel: driving              # способ: driving | walking | transit | bicycling (в OSM transit = авто)
+
+# --- кнопки ------------------------------------------------------------
+climate_buttons: [auto, ac, recirc, gclean]   # верхний ряд «Климата»; можно добавить maxheat, maxcool
+hide: []                         # скрыть: auto, ac, defrost, rear, recirc, wheel, maxheat, maxcool, seat_heating, seat_cooling,
+                                 #         windows, lock, rear_climate, gclean, ambient, massage  (массаж и так скрыт, если машина его не объявила)
+tabs: [overview, climate, body, comfort, data]  # только mha-card / mha-card-panel — вкладки и их порядок
+default_tab: overview            # только mha-card / mha-card-panel: вкладка при открытии
+# remember_tab: false            # true — помнить последнюю выбранную вкладку вместо default_tab
+
+# --- панель на весь экран (только panel, рассчитана на 1920×1080) -------------
+# scale: 1.6                     # необязательно: абсолютный масштаб (от 0.5); по умолчанию подбирается по окну
+# zoom: 0.85                     # подгонка масштаба (панель: меньше 1 — нет прокрутки); работает и в остальных карточках, 0.5–2
+# panel_height: 1000             # необязательно: высота в px; по умолчанию — остаток окна
+# rotate: off                    # только panel: смартфон в портрете. off (по умолчанию) — карточка с вкладками, auto — развернуть в альбомную, always
+# panel_min_width: 900           # только panel: уже 900 px — карточка с вкладками (портретная раскладка)
+#                                # (с map: true панель в три колонки: машина | управление | карта; экран не меньше 768×384 px)
+# --- картинка по вкладкам и салон (только mha-card / mha-card-panel) -------------
+tab_images: true                 # false — одна картинка на все вкладки; или по вкладкам:
+# tab_images: { overview: side, climate: cabin, body: top, comfort: cabin, data: cockpit }
+#                                # side | top | cabin (фото салона) | cockpit (приборка) | none
+cabin_fabric: green              # цвет ткани салона: green (как на фото) | light_gray | dark_gray | любой цвет, "#7a2a2a"
+cabin_trim: bronze               # цвет полосы под экраном и на дверях: bronze | silver | gold | любой цвет
+cabin_opacity: 0.6                 # прозрачность эффектов подогрева/вентиляции/потоков: 0…1 или {heat: 0.6, vent: 1, air: 0.5}
+cabin_effects:                   # что рисовать на салоне; false — ничего; true/не задано — всё
+  heat: true                     # подогрев сидений
+  vent: true                     # вентиляция сидений
+  wheel: true                    # подогрев руля
+  air: true                      # потоки воздуха (лицо / ноги / стекло)
+  defrost: true                  # обогрев лобового и заднего стекла
+  ambient: true                  # атмосферная подсветка (вкладка «Комфорт»)
+  massage: true                  # массаж (вкладка «Комфорт»)
+height: 440                      # только mha-card, широкий экран: высота вкладки, px (0 — без ограничения)
+sunroof_vent_max: 8              # наибольшее положение люка, %, которое считается проветриванием (вместо «4%» — «Проветривание»)
+confirm_open: false              # true — спрашивать подтверждение перед открытием окон и люка
+buttons: [auto, ac, heat, cool, defrost, rear]   # только compact и mini: auto, ac, defrost, rear, recirc, wheel, heat, cool
+
+# --- внешний вид авто --------------------------------------------------
+car_color: "#535969"             # цвет кузова (любой CSS-цвет); по умолчанию серо-синий
+wheels: type1                   # диски на виде сбоку, оба сразу: type1 (родные, по умолчанию) / type2 / type3 / type4 / type5
+arch_color: black               # молдинги арок: black (по умолчанию) / original (как на исходном фото) / body (в цвет кузова) / любой цвет, напр. "#c0392b"
+chrome_delete:                   # антихром на виде сбоку; true = все пять групп чёрным
+  front_bumper: 0                # 0/false — хром как есть; 0..1 — степень затемнения;
+  rear_bumper: 0                 # "#202020" — перекрасить в цвет; "body" — в цвет кузова
+  doors: 0                       # нижний молдинг дверей
+  rails: 0                       # рейлинги на крыше
+  windows: 0                     # молдинги стёкол
+car_image: monjaro               # ключ встроенной машины (сейчас: monjaro), drawing — нарисованная,
+                                 # либо путь/URL своей картинки
+car_image_top: monjaro           # вид сверху: ключ или путь (по умолчанию — как car_image)
+car_image_flip: false            # true — отразить картинку по горизонтали
+car_image_facing: right          # куда смотрит машина на виде сбоку: right | left
+                                 # (встроенная смотрит вправо; left — зеркалит её вместе с маркерами;
+                                 # для своей картинки — куда смотрит она сама)
+car_image_hotspots:              # необязательно: положение маркеров, % от рамки [x, y]
+  headlight: [93, 45.5]
+  taillight: [5, 38]
+  front: [57.6, 37.5]
+  rear: [35.1, 37.5]
+  hood: [83, 34]
+  trunk: [11.5, 21]
+  ground: [50, 100]

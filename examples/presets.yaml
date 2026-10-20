@@ -1,0 +1,73 @@
+# The six presets the card used to carry inside the code. Nothing is built in any more:
+# copy this block into the card's config, then change, remove or add presets as you like.
+# A preset that is not listed is not on the card.
+presets:
+  - id: winter
+    name: Зима                 # optional: the label on the tile
+    icon: heat
+    temp: 24
+    auto: true
+    ac: false
+    defrost: true
+    rear: true
+    circ: outside
+    seat_heat: "3"
+    wheel: "3"
+    seat_vent: "off"
+  - id: summer
+    name: Лето
+    icon: cool
+    temp: min
+    auto: true
+    ac: true
+    defrost: false
+    rear: false
+    circ: inside
+    flow: face
+    seat_vent: "3"
+    seat_heat: "off"
+    wheel: "off"
+  - id: defog
+    name: Запотело
+    icon: defrost
+    temp: 24
+    auto: false
+    ac: true
+    defrost: true
+    rear: true
+    circ: outside
+    flow: window
+    fan: "7"
+  - id: comfort
+    name: Комфорт
+    icon: auto
+    temp: 22
+    auto: true
+    ac: true
+    defrost: false
+    rear: false
+    circ: auto
+    seat_heat: "off"
+    seat_vent: "off"
+    wheel: "off"
+  - id: vent
+    name: Проветрить
+    icon: fresh
+    auto: false
+    ac: false
+    defrost: false
+    rear: false
+    circ: outside
+    flow: face
+    fan: "5"
+  - id: "off"
+    name: Всё выкл
+    enabled: false              # скрыт по умолчанию (включите true, чтобы показать); всего на карточке до 8 пресетов
+    icon: climate
+    auto: false
+    ac: false
+    defrost: false
+    rear: false
+    seat_heat: "off"
+    seat_vent: "off"
+    wheel: "off"
