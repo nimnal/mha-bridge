@@ -10,6 +10,7 @@
   ],
   "config_flow": true,
   "dependencies": [
+    "http",
     "websocket_api"
   ],
   "documentation": "https://github.com/nimnal/mha-bridge",
