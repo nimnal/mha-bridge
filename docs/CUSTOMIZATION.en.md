@@ -426,7 +426,7 @@ map:
   zoom: 15                        # default zoom, 1-22
   aspect_ratio: "16:10"           # proportions; or set height: 260 (px) instead
   theme_mode: auto                # auto | light | dark
-  hours_to_show: 0                # hours of the trail to draw (0 = none)
+  hours_to_show: 0                # hours of the trail to draw (0 = none; if trail_color or trail_width is set, 24 by default)
   tab: overview                   # which tab: overview, climate, body, comfort, data
   title: Where is the car         # heading above the map; "" removes the heading
   center: auto                    # auto (as in HA) | follow (keep the car in the centre) | fixed (do not move on updates)
@@ -448,7 +448,7 @@ map:
   geo_location_sources: []        # geo_location sources, for example [all]
   auto_fit: false                 # fit every object into the view
   fit_zones: false                # include zones when fitting
-  trail_color: "#ff3b7a"          # colour of the trail (any CSS colour)
+  trail_color: "#ff3b7a"          # colour of the trail (any CSS colour; "#" is optional: ff3b7a)
   trail_width: 4                  # line width of the trail
 ```
 

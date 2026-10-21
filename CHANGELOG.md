@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0 — 2026-10-21 (Android app 1.1)
+- Android app: English interface. The language follows the system language (Russian, Ukrainian, Belarusian and Kazakh show Russian, everything else English), and a “Language” card at the top of the app switches it by hand: Auto / Русский / English. The choice is saved; the notification text is translated too.
+- Map trail: `trail_color` / `trail_width` now work without `hours_to_show` (the trail of the last 24 hours is drawn; the stock map draws no trail at 0 hours), and a colour typed without `#` (`ffffff`) is accepted; an invalid colour is ignored. The trail colour and width now apply to the line itself (the stock map draws it as separate non-interactive segments that were left untouched), and the dots shrink to the width of the line.
+- Map in the card no longer flickers or turns white while the car drives: the card re-renders every time the speed or position changes, and each render used to move the map element, so Home Assistant rebuilt the map and reloaded its tiles. The map now lives outside the re-rendered part of the card and stays untouched.
+
 ## 1.1.1 — 2026-10-20 (Android app 1.1)
 **The first public release of MHA Bridge**: the Android app for the ECARX head unit, the Home Assistant integration `mha_bridge` and a family of Lovelace cards. Optional functions are created only when the car reports them as supported.
 

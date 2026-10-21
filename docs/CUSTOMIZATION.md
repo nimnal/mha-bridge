@@ -429,7 +429,7 @@ map:
   zoom: 15                        # масштаб по умолчанию, 1–22
   aspect_ratio: "16:10"           # пропорции; вместо них можно задать height: 260 (px)
   theme_mode: auto                # auto | light | dark
-  hours_to_show: 0                # сколько часов показывать след пути (0 — не показывать)
+  hours_to_show: 0                # сколько часов показывать след пути (0 — не показывать; если задан trail_color или trail_width, по умолчанию 24)
   tab: overview                   # на какой вкладке: overview, climate, body, comfort, data
   title: Где машина               # заголовок над картой; "" — без заголовка
   center: auto                    # auto (как в HA) | follow (всегда держать машину в центре) | fixed (не двигать при обновлениях)
@@ -451,7 +451,7 @@ map:
   geo_location_sources: []        # источники geo_location, например [all]
   auto_fit: false                 # подобрать масштаб так, чтобы вошли все объекты
   fit_zones: false                # учитывать зоны при подборе
-  trail_color: "#ff3b7a"          # цвет следа пути (любой цвет CSS)
+  trail_color: "#ff3b7a"          # цвет следа пути (любой цвет CSS; можно без #: ff3b7a)
   trail_width: 4                  # толщина линии следа
 ```
 

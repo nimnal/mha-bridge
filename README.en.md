@@ -6,7 +6,7 @@
 
 [![Add to HACS](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=nimnal&repository=mha-bridge&category=integration)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Version](https://img.shields.io/badge/version-1.1.1-2fd6a4.svg)
+![Version](https://img.shields.io/badge/version-1.2.0-2fd6a4.svg)
 [![Русский](https://img.shields.io/badge/README-Русский-lightgrey.svg)](README.md)
 
 ![MHA Bridge cards](docs/gallery/family.png)
@@ -27,7 +27,7 @@
 - 🪑 **A picture per tab:** the Climate tab shows the cabin photo from above (no body) with heating, ventilation and air flow lit up; fabric and trim colours are selectable.
 - 🎨 **Vector Monjaro pictures** for the side and top views: body colour, anti-chrome per zone, wheel-arch colour.
 - 📱 **Responsive** from desktop down to a narrow phone screen.
-- 🌐 **Russian and English** UI for the integration and cards.
+- 🌐 **Russian and English** UI for the integration and cards. The app language follows the system language and can be switched by hand (the “Language” card at the top).
 - 🔐 **The HA token stays on the device.** Create a dedicated HA user with a long-lived token for the car.
 
 ## 🖼️ Customization gallery

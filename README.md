@@ -6,7 +6,7 @@
 
 [![Add to HACS](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=nimnal&repository=mha-bridge&category=integration)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Version](https://img.shields.io/badge/version-1.1.1-2fd6a4.svg)
+![Version](https://img.shields.io/badge/version-1.2.0-2fd6a4.svg)
 [![English](https://img.shields.io/badge/README-English-lightgrey.svg)](README.en.md)
 
 ![Карточки MHA Bridge](docs/gallery/family.png)
@@ -27,7 +27,7 @@
 - 🪑 **Картинка по вкладкам:** на «Климате» фото салона сверху (без кузова) с подсветкой обогрева, обдува и потоков, цвет ткани и полосы выбирается.
 - 🎨 **Векторная картинка Monjaro** для вида сбоку и сверху: цвет кузова, антихром по зонам, цвет колёсных арок.
 - 📱 **Адаптивная вёрстка** от десктопа до узкого экрана смартфона.
-- 🌐 **Русский и английский** интерфейс интеграции и карточек.
+- 🌐 **Русский и английский** интерфейс приложения, интеграции и карточек. Язык приложения выбирается автоматически по языку системы, его можно переключить вручную (карточка «Язык / Language» вверху).
 - 🔐 **Токен HA хранится только на устройстве.** Для машины можно завести отдельного пользователя с долгосрочным токеном.
 
 ## 🖼️ Галерея настроек

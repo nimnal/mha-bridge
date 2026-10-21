@@ -16,7 +16,7 @@ map: false                       # true — карта внутри карточ
 #   zoom: 15                     # масштаб по умолчанию
 #   aspect_ratio: "16:10"        # или height: 260 (px)
 #   theme_mode: auto             # auto | light | dark
-#   hours_to_show: 0             # след пути, часов
+#   hours_to_show: 0             # след пути, часов (если задан trail_color или trail_width, по умолчанию 24)
 #   tab: overview                # на какой вкладке
 #   title: Где машина               # заголовок над картой; "" — без заголовка
 #   center: auto                    # auto (как в HA) | follow (держать машину в центре) | fixed (не двигать при обновлениях)
@@ -38,7 +38,7 @@ map: false                       # true — карта внутри карточ
 #   geo_location_sources: []        # источники geo_location, например [all]
 #   auto_fit: false                 # подобрать масштаб так, чтобы вошли все объекты
 #   fit_zones: false                # учитывать зоны при подборе
-#   trail_color: "#ff3b7a"          # цвет следа пути (любой цвет CSS)
+#   trail_color: "#ff3b7a"          # цвет следа пути (любой цвет CSS; можно без #)
 #   trail_width: 4                  # толщина линии следа
 stable_tabs: true                # false — высота картинки своя на каждой вкладке
 headlights: true                 # свет фар, пока двигатель работает
