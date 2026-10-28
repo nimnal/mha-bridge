@@ -6,7 +6,7 @@
 
 [![Add to HACS](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=nimnal&repository=mha-bridge&category=integration)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Version](https://img.shields.io/badge/version-1.2.0-2fd6a4.svg)
+![Version](https://img.shields.io/badge/version-1.2.1-2fd6a4.svg)
 [![English](https://img.shields.io/badge/README-English-lightgrey.svg)](README.en.md)
 
 ![Карточки MHA Bridge](docs/gallery/family.png)
@@ -176,18 +176,17 @@ cabin_trim: silver         # bronze (как на фото), silver, gold или 
 
 ### Через HACS (рекомендуется)
 
-1. В HA откройте **HACS → ⋮ → Custom repositories**.
-2. Вставьте `https://github.com/nimnal/mha-bridge`, категория **Integration**.
-3. Найдите **MHA Bridge** в HACS и нажмите **Download**.
-4. **Перезапустите Home Assistant.**
-5. **Настройки → Устройства и службы → Добавить интеграцию → MHA Bridge.** Введите имя автомобиля (по умолчанию «Geely Monjaro»).
+1. В HA откройте **HACS**, найдите **MHA Bridge** через поиск и нажмите **Download**.
+2. Если поиск ничего не находит (например, старая версия HACS), добавьте репозиторий вручную: **HACS → ⋮ → Custom repositories**, вставьте `https://github.com/nimnal/mha-bridge`, категория **Integration**, затем снова найдите **MHA Bridge** и нажмите **Download**.
+3. **Перезапустите Home Assistant.**
+4. **Настройки → Устройства и службы → Добавить интеграцию → MHA Bridge.** Введите имя автомобиля (по умолчанию «Geely Monjaro»).
 
 Кнопка быстрой установки: [![Open your Home Assistant instance and open the repository inside HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=nimnal&repository=mha-bridge&category=integration)
 
 ### Вручную
 
 1. Скопируйте папку `custom_components/mha_bridge` в каталог конфигурации HA: `config/custom_components/mha_bridge`.
-2. Перезапустите Home Assistant и добавьте интеграцию, как в шаге 5 выше.
+2. Перезапустите Home Assistant и добавьте интеграцию, как в шаге 4 выше.
 
 ### Приложение на головном устройстве
 
@@ -612,11 +611,11 @@ automation:
 
 - Работает только пока включено головное устройство и запущено приложение. При выключенной машине сущности становятся недоступными.
 - Набор функций зависит от прошивки и комплектации. Состояние замка читается, но команд замка, багажника и капота пока нет: их идентификаторы неизвестны (см. «Диагностика»).
-- Окна, люк, шторка, задний климат, массаж и подсветка проверены только по исходникам штатного приложения и в тестовом HA, на живой машине их ещё не пробовали.
+- Управление окнами, люком, шторкой, климатом (включая задний), подсветкой и массажем сидений проверено на живых автомобилях Geely Monjaro 2024 (KX11): на машине, купленной у дилера, и на машине параллельного импорта. Все команды работают исправно.
 - 3D-вид сверху не поддерживает цвет арок и антихром по зонам (хром задаётся одним цветом).
 - Белый цвет кузова получается слегка кремовым: перекраска сохраняет светотени исходной серой машины.
 - Для узнаваемой картинки другой модели нужно подготовить свои картинки и маркеры (`car_image`, `car_image_hotspots`).
-- Проверено на Geely Monjaro, на других автомобилях ECARX поведение не гарантируется.
+- Совместимость с Geely Monjaro 2024 (KX11) полная, проверена на дилерском автомобиле и на автомобиле параллельного импорта. Совместимость не проверялась с другими рынками и родственными моделями: Geely Monjaro продаётся более чем в 25 странах (в Китае — как Xingyue L), есть родственные модели на той же платформе (Renault Grand Koleos / Koleos, Volga K50). Возможно, они совместимы, но это не проверено; на других автомобилях ECARX поведение не гарантируется.
 
 ## 📁 Структура репозитория
 

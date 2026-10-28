@@ -6,7 +6,7 @@
 
 [![Add to HACS](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=nimnal&repository=mha-bridge&category=integration)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Version](https://img.shields.io/badge/version-1.2.0-2fd6a4.svg)
+![Version](https://img.shields.io/badge/version-1.2.1-2fd6a4.svg)
 [![Русский](https://img.shields.io/badge/README-Русский-lightgrey.svg)](README.md)
 
 ![MHA Bridge cards](docs/gallery/family.png)
@@ -176,18 +176,17 @@ The cabin is always a flat photo and does not depend on WebGL or `car_3d`. The f
 
 ### Via HACS (recommended)
 
-1. In HA open **HACS → ⋮ → Custom repositories**.
-2. Paste `https://github.com/nimnal/mha-bridge`, category **Integration**.
-3. Find **MHA Bridge** in HACS and press **Download**.
-4. **Restart Home Assistant.**
-5. **Settings → Devices & services → Add integration → MHA Bridge.** Enter the car name (default "Geely Monjaro").
+1. In HA open **HACS**, search for **MHA Bridge** and press **Download**.
+2. If the search finds nothing (for example an old HACS), add the repository by hand: **HACS → ⋮ → Custom repositories**, paste `https://github.com/nimnal/mha-bridge`, category **Integration**, then search for **MHA Bridge** again and press **Download**.
+3. **Restart Home Assistant.**
+4. **Settings → Devices & services → Add integration → MHA Bridge.** Enter the car name (default "Geely Monjaro").
 
 Quick install: [![Open your Home Assistant instance and open the repository inside HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=nimnal&repository=mha-bridge&category=integration)
 
 ### Manually
 
 1. Copy `custom_components/mha_bridge` to your HA config folder: `config/custom_components/mha_bridge`.
-2. Restart Home Assistant and add the integration as in step 5 above.
+2. Restart Home Assistant and add the integration as in step 4 above.
 
 ### The app on the head unit
 
@@ -612,11 +611,11 @@ automation:
 
 - It works only while the head unit is on and the app is running. With the car off, entities become unavailable.
 - The set of functions depends on firmware and trim. The lock state is read, but there are no lock, trunk or hood commands yet: their IDs are unknown (see "Diagnostics").
-- Windows, sunroof, shade, rear climate, massage and ambient light were checked only against the stock app's source and in a test Home Assistant, not yet on a live car.
+- Control of the windows, sunroof, sunshade, climate (including the rear one), ambient light and seat massage was checked on live Geely Monjaro 2024 (KX11) cars: one bought from a dealer and one parallel-import car. All commands work correctly.
 - The 3D top view does not support the arch colour or per-zone anti-chrome (one chrome colour only).
 - A white body comes out slightly cream: the repaint keeps the shading of the original grey car.
 - Other models need their own pictures and markers (`car_image`, `car_image_hotspots`).
-- Tested on a Geely Monjaro only; other ECARX cars are not guaranteed.
+- Compatibility with the Geely Monjaro 2024 (KX11) is full, verified on a dealer car and on a parallel-import car. Compatibility was not tested with other markets and related models: the Geely Monjaro is sold in more than 25 countries (in China as the Xingyue L), and there are related models on the same platform (Renault Grand Koleos / Koleos, Volga K50). They may be compatible, but this has not been verified; other ECARX cars are not guaranteed.
 
 ## 📁 Repository structure
 
